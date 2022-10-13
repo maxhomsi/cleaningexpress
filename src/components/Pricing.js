@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { useNavigate } from "react-router-dom";
+import { Login } from 'react-router-dom';
+import {Link as RouterLink} from 'react-router-dom' ;
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -19,7 +21,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://github.com/maxhomsi/">
-      CleaningExpress
+        CleaningExpress
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -38,9 +40,9 @@ const tiers = [
       'Help center access',
       'Email support',
     ],
-    link: ['/Register'], //link
     buttonText: 'Sign up for free', //how to make this go to a link?
     buttonVariant: 'outlined',
+    buttonUrl: '/SignUp'
     
   },
   {
@@ -55,6 +57,7 @@ const tiers = [
     ],
     buttonText: 'Get started', //outro
     buttonVariant: 'contained',
+    buttonUrl: '/SignUp'
   },
   {
     title: 'Enterprise',
@@ -68,7 +71,7 @@ const tiers = [
     ],
     buttonText: 'Contact us', //e mais 1
     buttonVariant: 'outlined',
-    
+    buttonUrl: '/Contact'
     
   },
 ];
@@ -77,14 +80,18 @@ const tiers = [
 
 function PricingContent() {
     const navigate = useNavigate();
+    function handleButtonClick(){
+      console.log("gotLichd" )
+    }
   return (
     <React.Fragment>
       <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
+      
       <CssBaseline />
       
       {/* Hero unit */}
       <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
-        <Typography
+         <Typography
           component="h1"
           variant="h2"
           align="center"
@@ -112,6 +119,7 @@ function PricingContent() {
               
             >
               <Card>
+                
                 <CardHeader
                   title={tier.title}
                   subheader={tier.subheader}
@@ -127,6 +135,7 @@ function PricingContent() {
                         : theme.palette.grey[700],
                   }}
                 />
+                
                 <CardContent>
                   <Box
                     sx={{
@@ -155,7 +164,9 @@ function PricingContent() {
                   </ul>
                 </CardContent>
                 <CardActions>
-                  <Button fullWidth variant={tier.buttonVariant}>
+                  <Button component={RouterLink} fullWidth variant={tier.buttonVariant} to={tier.buttonUrl}>
+                    
+                    
                     {tier.buttonText}
                   </Button>
                 </CardActions>
@@ -165,7 +176,8 @@ function PricingContent() {
         </Grid>
       </Container>
       {/* Footer */}
-      
+      <br></br>
+      <br></br>
       {/* End footer */}
     </React.Fragment>
   );

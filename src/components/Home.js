@@ -1,135 +1,102 @@
 //aqui eh onde o profile do usuario vai aparecer
-
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import Switch from '@mui/material/Switch';
-import Slider from '@mui/material/Slider';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import cookie from 'cookie'
+import axios from 'axios';
+import Container from '@mui/material/Container'
+import { Component } from 'react';
 
-function BasicSelect() {
-    const [age, setAge] = React.useState('');
+
+// import { useRadioGroup } from '@mui/material/RadioGroup';
+// import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
+import './css/hometest.css';
+
+
+// export default function Profile() {
+//   return (
+    const cookies = cookie.parse(document.cookie); // transforma o cookie em json
+    console.log(cookies)
+    class Home extends Component { //onde essa caralha ta declarada
+      constructor(props) {
+          super(props)
+          this.state = {
+              maidInfo: [],
+          }
+        };
+
+
+        
+    //     componentDidMount() {
+    //       axios.get('https://cleaningexpress.herokuapp.com/register')
+    //           .then(res => {
+                  
+    //               const maidInfo = res.data
+    //               this.setState({ SingUp })
+                  
+    //           }).catch(function (error) {
+    //               console.log(error)
+    //               document.location.reload();
   
-    const handleChange = (event) => {
-      setAge(event.target.value);
-    };
+    //             })
+              
+    //   }
+
+      render() {
+        return (
+            <Container sx={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
+            
+            <div class="portfoliocard">
+		<div class="coverphoto"></div>
+    
+		<div class="profile_picture"></div> 
+		<div class="left_col">
+			<div class="followers">
+				<div class="follow_count">Services</div>
+				Cleaning
+        Washing Clothes
+        Dusting
+        ...
+
+			</div>
+			{/* <div class="following">
+			{
+            <FormControl>
+  <FormLabel id="demo-controlled-radio-buttons-group">Gender</FormLabel>
+  <useRadioGroup
+    aria-labelledby="demo-controlled-radio-buttons-group"
+    name="controlled-radio-buttons-group"
+    value={value}
+    onChange={handleChange}
+  >
+    <FormControlLabel value="Requester" control={<Radio />} label="Requester" />
+    <FormControlLabel value="Provider" control={<Radio />} label="Provider" />
+  </useRadioGroup>
+</FormControl> 
+				
+			</div> */}
+		</div>
+		<div class="right_col">
+			<h2 class="name">Princess Neytiri</h2>
+		
+			<ul class="contact_information">
+				<li class="email"></li>
+				<li class="website"><a class="nostyle" href="#">princess@avatar.com</a></li>
+				<li class="mail">Phone</li>
+				<li class="phone">1-(732)-757-2923</li>
+        <li class="zip"> Zip Code</li>
+				<li class="resume"><a href="#" class="nostyle">78753</a></li>
+			</ul>
+      <br></br>  
+		</div>
+		</div>
+            </Container>
+
+
+        )
+              }
+            }
+            export default Home;
+
   
-    return (
-      <Box sx={{ maxWidth: 100, margin: "auto", marginTop: "10px" }}>
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Quality</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={age}
-            label="Quality"
-            onChange={handleChange}
-          >
-            <MenuItem value={1}>Low</MenuItem>
-            <MenuItem value={2}>Normal</MenuItem>
-            <MenuItem value={3}>High</MenuItem>
-          </Select>
-        </FormControl>
-      </Box>
-    );
-  }
-
-const label = { inputProps: { 'aria-label': 'Switch demo' } };
-function valuetext(value) {
-    return `${value}°C`;
-  }
-
-
-const card1 = (
-  <React.Fragment>
-    <CardContent>
-      
-      <Typography variant="h5" component="div">
-        Online Mode
-        <br />
-        <br />
-      </Typography>
-     
-      <Typography variant="body2">
-        Is this application connected to the internet?
-                <br />
-      </Typography>
-      <Switch sx={{marginTop: "30px"}} {...label} />
-    </CardContent>
     
-  </React.Fragment>
-);
-
-const card2 = (
-    <React.Fragment>
-    <CardContent>
-      
-      <Typography variant="h5" component="div">
-        Master Volume
-        <br />
-        <br />
-      </Typography>
-     
-      <Typography variant="body2">
-        Overrides all other sound settings in this application
-                <br />
-      </Typography>
-      <Slider
-        sx={{marginTop: "30px"}}
-        aria-label="Small steps"
-        defaultValue={20}
-        getAriaValueText={valuetext}
-        step={10}
-        marks
-        min={0}
-        max={100}
-        valueLabelDisplay="auto"
-      />
-    </CardContent>
-    
-      </React.Fragment>
-)
-
-const card3 = (
-    <React.Fragment>
-    <CardContent>
-      
-      <Typography variant="h5" component="div">
-         Sound Quality
-        <br />
-        <br />
-      </Typography>
-     
-      <Typography variant="body2">
-        Manually control the music 
-        quality in event of poor connection
-                <br />
-      </Typography>
-     <BasicSelect sx={{ minWidth: 120 }} />
-
-    </CardContent>
-    
-    
-
-      </React.Fragment>
-)
-
-
-export default function OutlinedCard() {
-   
-  return (
-    <Box sx={{ minWidth: 100%"", display:"flex", margin:"1%"}}>
-      <Card variant="outlined" sx={{maxWidth: 300}}>{card1}</Card>
-      <Card variant="outlined" sx={{marginLeft:"20px", maxWidth: 300}}>{card2}</Card>
-      <Card variant="outlined" sx={{marginLeft:"20px",  maxWidth: 300}}>{card3}</Card>
-
-      
-
-    </Box>
-  );
-}
+  
+ 

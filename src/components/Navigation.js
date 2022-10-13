@@ -70,10 +70,11 @@ const ResponsiveAppBar = () => {
   };
   const navigate = useNavigate();
   return (
-    <AppBar position="static">
+    <AppBar position="static"
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -85,8 +86,9 @@ const ResponsiveAppBar = () => {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".2rem",
-              color: "inherit",
+              color: "black",
               textDecoration: "none",
+              backgroundColor: "pink"
             }}
           >
             CleaningExpress

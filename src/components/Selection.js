@@ -1,1 +1,0 @@
-//essa pagina vai ser para o usuario escolher entre solicitar/fornecer
