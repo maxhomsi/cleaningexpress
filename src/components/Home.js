@@ -75,13 +75,13 @@ import './css/hometest.css';
 			</div> */}
 		</div>
 		<div class="right_col">
-			<h2 class="name">Princess Neytiri</h2>
+			<h2 class="name">John Smith</h2>
 		
 			<ul class="contact_information">
 				<li class="email"></li>
-				<li class="website"><a class="nostyle" href="#">princess@avatar.com</a></li>
+				<li class="website"><a class="nostyle" href="#">john@123.com</a></li>
 				<li class="mail">Phone</li>
-				<li class="phone">1-(732)-757-2923</li>
+				<li class="phone">1-(123)-123-45</li>
         <li class="zip"> Zip Code</li>
 				<li class="resume"><a href="#" class="nostyle">78753</a></li>
 			</ul>

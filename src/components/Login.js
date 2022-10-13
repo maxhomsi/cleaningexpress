@@ -52,8 +52,12 @@ export default function SignIn() {
   };
   const login = (e) => {
     e.preventDefault();
-        
-        axios.post('https://cleaningexpress.herokuapp.com/login', { email: state.email, password: state.password }).then(response => {
+         e.preventDefault();
+      document.cookie = cookie.serialize("loggedIn", "true", {maxAge: 60});
+
+      navigate("/Home");
+    };
+   /*     axios.post('https://cleaningexpress.herokuapp.com/login', { email: state.email, password: state.password }).then(response => {
             console.log(response);
             
             document.cookie = `jwt=${response.data.signedToken};max-age=60*1000`;
@@ -70,7 +74,7 @@ export default function SignIn() {
             .catch(function (error) {
                 console.log(error)
             })
-  };
+  }; */
 
   return (
     <ThemeProvider theme={theme}>

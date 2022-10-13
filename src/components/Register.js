@@ -186,14 +186,16 @@ const navigate = useNavigate();
                 
               </Grid>
             </Grid>
+
             <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-            >
+              
+            ><a href="./home">
               Sign Up
-            </Button>
+              </a></Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="/" variant="body2">
